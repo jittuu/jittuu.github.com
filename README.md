@@ -1,0 +1,1 @@
+The is the data for my blog, <http://www.jittuu.com>. It is hosted on <https://github.com> using [jekyll](https://github.com/mojombo/jekyll).
