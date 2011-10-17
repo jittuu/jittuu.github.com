@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% assign post = page %}
+
+<div id="post">
+  <h1>{{ post.title | xml_escape }}</h1>
+  <span>{{ post.date | date_to_string }}</span>
+  <hr class="space" />
+
+  {{ content }}
+</div>
