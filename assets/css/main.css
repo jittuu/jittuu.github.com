@@ -239,10 +239,13 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
 
+.post { margin: 0 0 0 30px; }
 .post h1 { font-weight:bold; font-size:1.5em }
-div#nav { float: left; display: inline; padding: 10px 0 0; margin: 10px 0 0; border-top: 1px solid #EEE; }
+
+div#nav { float: left; display: inline; padding: 10px 0 0; margin: 10px 0 0 10px; border-top: 1px solid #EEE; }
 div#nav ul { float: left; margin: 0 0 5px; padding: 0; }
 div#nav ul li { float: left; display: inline; margin: 0 10px 0 0; }
 div#nav ul li a { float: left; display: block; background: #EEE; color #666; padding: 7px 8px; vertical-align: middle;  line-height: 1; text-decoration: none; font-weight: normal; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
 
+#header { margin: 0 0 0 10px; }
 #header h1 { margin-bottom: 3px; }
