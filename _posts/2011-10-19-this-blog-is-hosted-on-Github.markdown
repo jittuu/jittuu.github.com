@@ -5,7 +5,8 @@ title: "This blog is hosted on Github"
 
 I hosted my blog on [github][] using [github pages][github-pages] which is powered by [jekyll][].
 
-I chosed Github pages hosting because of the following reasons:
+I chosed Github pages hosting because of the following reasons:  
+
   - fullcontrol over layout and css styling
   - **versioning** by storing in git
   - markdown! _I'm writing this blog post in vim_ :)
