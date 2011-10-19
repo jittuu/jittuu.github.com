@@ -242,6 +242,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .post { margin: 0 0 0 30px; }
 .post h1 { font-weight:bold; font-size:1.5em }
 
+div#content { min-height: 500px }
 div#nav { float: left; display: inline; padding: 10px 0 0; margin: 10px 0 0 10px; border-top: 1px solid #EEE; }
 div#nav ul { float: left; margin: 0 0 5px; padding: 0; }
 div#nav ul li { float: left; display: inline; margin: 0 10px 0 0; }
@@ -249,3 +250,7 @@ div#nav ul li a { float: left; display: block; background: #EEE; color #666; pad
 
 #header { margin: 0 0 0 10px; }
 #header h1 { margin-bottom: 3px; }
+
+#footer { float: left; display: inline; border-top: 1px; font-size: 70%; background: #EEE; margin-top: 40px; padding: 20px; }
+#footer img { margin-right: 10px }
+#footer span, #footer span a { vertical-align: top; }
