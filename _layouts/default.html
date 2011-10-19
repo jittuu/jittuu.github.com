@@ -7,19 +7,25 @@
 
   <body>
     <div class="container">
+      <hr class="space" />
       <div id="header" class="span-24">
-        <h1>Soe Moe's blog.</h1>
+        <h1>Jittuu's craftsmanship.</h1>
+        <span class="quiet">crafting software</span>
       </div>
       
-      <div id="content" class="span-18">
-        {{ content }}
+      <div id="nav" class="span-24">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="//github.com/jittuu">on github</a></li>
+          <li><a href="//twitter.com/jittuu">@twitter</a></li>
+          <li><a href="mailto:soemoetunlwin@gmail.com">via email</a></li>
+        </ul>
       </div>
-      <div id="navigation" class="span-6 last">
-        <p><a href="/">home</a></p>
-        <p><a href="/about.html">about</a></p>
-        <p><a href="//github.com/jittuu">on github</a></p>
-        <p><a href="//twitter.com/jittuu">@twitter</a></p>
-        <p><a href="mailto:soemoetunlwin@gmail.com">via email</a></p>
+      <hr class="space" />
+
+      <div id="content" class="span-24">
+        {{ content }}
       </div>
     </div>
   </body>
