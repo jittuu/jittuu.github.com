@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Custom 404 page in ASP.NET MVC 3 and IIS 7.0
 ---
 
