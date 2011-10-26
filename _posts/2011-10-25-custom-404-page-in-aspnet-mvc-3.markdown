@@ -4,7 +4,7 @@ title: Custom 404 page in ASP.NET MVC 3 and IIS 7.0
 ---
 
 ## TL;DR
-Add the following config under **system.webServer** in web.config. It will execute **NotFound** action of **ErrorsController** class when 404 error is raised. It is just executing URL instead of **redireting**. _Only works in IIS 7+_
+Add the following config under **system.webServer** in web.config. It will execute **NotFound** action of **ErrorsController** class when 404 error is raised. It is just executing URL instead of **redirecting**. _Only works in IIS 7+_
 
 {% highlight xml %}
 <httpErrors errorMode="Custom" existingResponse="Replace">
