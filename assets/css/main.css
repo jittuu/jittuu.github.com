@@ -241,7 +241,7 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 
 ul.posts li { margin: 10px 0px; }
 .post { margin: 0 0 0 30px; }
-.post h1 { font-weight:bold; font-size:1.5em }
+.post h1 { font-weight:bold; font-size:2em }
 .post h2 { font-weight:bold; font-size:1.2em }
 div#content { min-height: 500px }
 div#nav { float: left; display: inline; padding: 10px 0 0; margin: 10px 0 0 10px; border-top: 1px solid #EEE; }
