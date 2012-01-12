@@ -72,7 +72,7 @@ When user type, I invoke _delay_ (closure function) with the callback function a
 
 #Example
 
-Lets say; user type "Awesome", the keyup event will be fired for A-Aw-Awe-Awes-Aweso-Awesom-Awesome. _delay_ as invoked for 7 times.
+Lets say; user type "Awesome", the keyup event will be fired for A-Aw-Awe-Awes-Aweso-Awesom-Awesome. _delay_ is invoked for 7 times.
 
 1. A
     <p>before invoke _timeoutId_ is 0. clearTimeout will do nothing.<br />
