@@ -255,3 +255,5 @@ div#nav ul li a { float: left; display: block; background: #EEE; color #666; pad
 #footer { float: left; display: inline; border-top: 1px; font-size: 70%; background: #EEE; margin-top: 40px; padding: 20px; }
 #footer img { margin-right: 10px }
 #footer span, #footer span a { vertical-align: top; }
+
+pre { padding: 5px }
