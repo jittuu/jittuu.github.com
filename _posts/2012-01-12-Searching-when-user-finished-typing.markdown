@@ -5,7 +5,7 @@ title: "Searching when user finished typing (AJAX)"
 
 ![searching](http://i.imgur.com/27Sq4.png)
 
-My application have a search field.
+My application has a search field.
 
 I want to search with criteria just after user **stop** typing for 200ms like above image. And this is how I did it.
 
