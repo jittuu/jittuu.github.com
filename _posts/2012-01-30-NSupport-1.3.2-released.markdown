@@ -7,7 +7,7 @@ title: "NSupport 1.3.2 is released"
 
 ![nsupport](http://i.imgur.com/wEB6T.png)
 
-Oh! Yeah.. *NSupport* got his won [icon][] which is created by [Thein Myint Win][twm]. Thanks a lot, bro. :)
+Oh! Yeah.. *NSupport* got his own [icon][] which is created by [Thein Myint Win][twm]. Thanks a lot, bro. :)
 
 [NSupport]:http://www.nuget.org/packages/NSupport
 [ChangeLog]:https://github.com/jittuu/NSupport/blob/master/ChangeLog.md
