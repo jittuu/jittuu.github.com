@@ -4,10 +4,32 @@ title: Jittuu's craftsmanship
 ---
 
 <ul class="posts">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
     <li>
-      <span>{{ post.date | date_to_string }}</span>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <div class="post">
+        <h1>
+          <a href="{{ post.url }}">{{ post.title | xml_escape }}</a>
+        </h1>
+
+        <span class="quiet small">{{ post.date | date_to_string }}</span>
+        <hr />
+
+        {{ post.content }}
+      </div>
     </li>
   {% endfor %}
 </ul>
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+      <a href="/" class="button newer">Newer Posts<span>»</span></a>
+    {% else %}
+    <a href="/page{{paginator.previous_page}}" class="button newer">Newer Posts<span>»</span></a>
+    {% endif %}
+  {% endif %}
+  {% if paginator.next_page %}
+  <a href="/page{{paginator.next_page}}" class="button older"><span>«</span>Older Posts</a>
+  {% endif %}
+</div>

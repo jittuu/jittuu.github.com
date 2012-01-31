@@ -239,15 +239,17 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
 
-ul.posts li { margin: 10px 0px; }
-.post { margin: 0 0 0 30px; }
+ul.posts { list-style-type: none; padding: 0em; }
+ul.posts > li { margin: 0px 0px 50px 0px; }
+.post { padding-left: 1.5em; }
 .post h1 { font-weight:bold; font-size:2em }
 .post h2 { font-weight:bold; font-size:1.2em }
+.post h1 a { text-decoration: none; color: black; }
 div#content { min-height: 500px }
 div#nav { float: left; display: inline; padding: 10px 0 0; margin: 10px 0 0 10px; border-top: 1px solid #EEE; }
 div#nav ul { float: left; margin: 0 0 5px; padding: 0; }
 div#nav ul li { float: left; display: inline; margin: 0 10px 0 0; }
-div#nav ul li a { float: left; display: block; background: #EEE; color #666; padding: 7px 8px; vertical-align: middle;  line-height: 1; text-decoration: none; font-weight: normal; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
+a.button { display: block; background: #EEE; color #666; padding: 7px 8px; vertical-align: middle;  line-height: 1; text-decoration: none; font-weight: normal; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
 
 #header { margin: 0 0 0 10px; }
 #header h1 { margin-bottom: 3px; }
@@ -257,3 +259,7 @@ div#nav ul li a { float: left; display: block; background: #EEE; color #666; pad
 #footer span, #footer span a { vertical-align: top; }
 
 pre { padding: 5px }
+
+div.pagination { overflow: hidden; }
+div.pagination .older { float: left; }
+div.pagination .newer { float: right; }
