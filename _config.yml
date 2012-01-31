@@ -1,1 +1,3 @@
 permalink: /:year/:i_month/:i_day/:title
+server: true
+pygments: true
