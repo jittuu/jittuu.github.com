@@ -4,7 +4,7 @@ title: "Tools - Teracopy"
 ---
 
 <p class="note">
-This is my own recommendation because I like it. No one paid any money for this and no money is accepted to get recommendation.
+I recommend it because I like it. No one paid any money for this and no money is accepted to get recommendation.
 </p>
 
 ![teracopy](http://i.imgur.com/rUEl5.png)
