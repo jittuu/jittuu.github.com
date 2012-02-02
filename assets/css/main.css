@@ -249,7 +249,19 @@ div#content { min-height: 500px }
 div#nav { float: left; display: inline; padding: 10px 0 0; margin: 10px 0 0 10px; border-top: 1px solid #EEE; }
 div#nav ul { float: left; margin: 0 0 5px; padding: 0; }
 div#nav ul li { float: left; display: inline; margin: 0 10px 0 0; }
-a.button { display: block; background: #EEE; color #666; padding: 7px 8px; vertical-align: middle;  line-height: 1; text-decoration: none; font-weight: normal; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
+a.button { 
+  display: block; 
+  background: #EEE; 
+  color #666; 
+  padding: 7px 8px; 
+  vertical-align: middle;  
+  line-height: 1; 
+  text-decoration: none; 
+  font-weight: normal; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+}
 
 #header { margin: 0 0 0 10px; }
 #header h1 { margin-bottom: 3px; }
@@ -263,3 +275,26 @@ pre { padding: 5px }
 div.pagination { overflow: hidden; }
 div.pagination .older { float: left; }
 div.pagination .newer { float: right; }
+
+p.note {
+  padding: 5px;
+  background-color: #feefc6;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-style: italic;
+}
+
+span.key {
+  text-align: center;
+  font-family: Monaco, Consolas, "Courier New", monospace;
+  background: #333;
+  color: #EEE;
+  text-shadow: 1px 1px 0px black;
+  min-width: 10px;
+  margin: 0px 2px;
+  padding: 3px 6px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
