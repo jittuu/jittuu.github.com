@@ -74,20 +74,12 @@ When user type, I invoke _delay_ (closure function) with the callback function a
 
 Lets say; user type "Awesome", the keyup event will be fired for A-Aw-Awe-Awes-Aweso-Awesom-Awesome. _delay_ is invoked for 7 times.
 
-1. A
-    <p>before invoke _timeoutId_ is 0. clearTimeout will do nothing.<br />
-    after invoke _timeoutId_ will be the return number from setTimeout method. Lets assume that as 1.</p>
-2. Aw
-    <p>before invoke _timeoutId_ is 1. clearTimeout will clear the timer for "A".<br />
-    after invoke _timeoutId_ will be new number again, e.g. 2.</p>
-3. Awe
-    <p>before invoke _timeoutId_ is 2. clearTimeout will clear the timer for "Aw".<br />
-    after invoke _timeoutId_ will be new number again, e.g. 3.</p>
+1. A - (**Before**) invoke _timeoutId_ is 0. clearTimeout will do nothing. (**After**) invoke _timeoutId_ will be the return number from _setTimeout_ method. Lets assume that as 1.
+2. Aw - (**Before**) invoke _timeoutId_ is 1. clearTimeout will clear the timer for "A". (**After**) invoke _timeoutId_ will be new number again, e.g. 2.
+3. Awe - (**Before** invoke _timeoutId_ is 2. clearTimeout will clear the timer for "Aw". (**After**) invoke _timeoutId_ will be new number again, e.g. 3.
 4. Awe... so on
-5. Awesome
-    <p>before invoke it clears previous timer and set new one.</p>
-6. after 200ms
-    <p>invoke the callback which is showing alert in my example.</p>
+5. Awesome - (**Before**) invoke it clears previous timer and set new one.
+6. after 200ms - invoke the callback which is showing alert in my example.
 
 Hope this one saves a few hours for you. :).
 
