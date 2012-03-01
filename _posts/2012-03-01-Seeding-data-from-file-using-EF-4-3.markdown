@@ -47,5 +47,9 @@ foreach (var filePath in Directory.EnumerateFiles(dirDatabaseScripts, "*.sql")) 
 {% endhighlight %}
 
 I hope it can save you a few hours. :)
+
+**update**: The issue was solved by [Michael Sync][sync]. Thanks Mike.
+
 [EF43]:http://nuget.org/packages/EntityFramework/4.3.1
 [DbMigrationsConfiguration]:http://msdn.microsoft.com/en-us/library/hh829093(v=vs.103).aspx
+[sync]:http://michaelsync.net
