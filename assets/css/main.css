@@ -249,6 +249,8 @@ div#content { min-height: 500px }
 div#nav { float: left; display: inline; padding: 10px 0 0; margin: 10px 0 0 10px; border-top: 1px solid #EEE; }
 div#nav ul { float: left; margin: 0 0 5px; padding: 0; }
 div#nav ul li { float: left; display: inline; margin: 0 10px 0 0; }
+
+li img { display: block; }
 a.button { 
   display: block; 
   background: #EEE; 
