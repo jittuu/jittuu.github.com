@@ -241,12 +241,11 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 
 ul.posts { list-style-type: none; padding: 0em; }
 ul.posts > li { margin: 0px 0px 50px 0px; }
-.post { padding-left: 1.5em; }
 .post h1 { font-weight:bold; font-size:2em }
 .post h2 { font-weight:bold; font-size:1.2em }
 .post h1 a { text-decoration: none; color: black; }
 div#content { min-height: 500px }
-div#nav { float: left; display: inline; padding: 10px 0 0; margin: 10px 0 0 10px; border-top: 1px solid #EEE; }
+div#nav { float: left; display: inline; padding: 10px 0 0; border-top: 1px solid #EEE; }
 div#nav ul { float: left; margin: 0 0 5px; padding: 0; }
 div#nav ul li { float: left; display: inline; margin: 0 10px 0 0; }
 
@@ -265,7 +264,6 @@ a.button {
   border-radius: 3px; 
 }
 
-#header { margin: 0 0 0 10px; }
 #header h1 { margin-bottom: 3px; }
 
 #footer { float: left; display: inline; border-top: 1px; font-size: 70%; background: #EEE; margin-top: 40px; padding: 20px; }
