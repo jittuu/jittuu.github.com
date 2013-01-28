@@ -3,7 +3,7 @@ layout: post
 title: "Seeding data from file using EF 4.3 Migration"
 ---
 
-[Entity Framework 4.3 Migration][EF4.3] supports seeding data by overriding the Seed method of [DbMigrationsConfiguration][DbMigrationsConfiguration] class.
+[Entity Framework 4.3 Migration][EF43] supports seeding data by overriding the Seed method of [DbMigrationsConfiguration][DbMigrationsConfiguration] class.
 
 For my project, I need to execute some sql files to insert initial data. (I'm migrating from old system and new system have different table structure)
 
