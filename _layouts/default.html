@@ -2,48 +2,38 @@
 <html>
   <head>
     <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
     <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/pygments.css" rel="stylesheet" type="text/css">
     {% include google_analytics.html %}
   </head>
 
   <body>
-    <div class="container">
-      <hr class="space" />
-      <div id="header" class="span-24">
-        <a class="right" href="//feeds.feedburner.com/JittuuBlog">
-          <img id="rss" src="/assets/img/rss.png" alt="rss" />
-        </a>
-        <h1>Jittuu's craftsmanship.</h1>
-        <span class="quiet">crafting software</span>
-      </div>
-      
-      <div id="nav" class="span-24">
-        <ul>
-          <li><a href="/" class="button">Home</a></li>
-          <li><a href="/about.html" class="button">About</a></li>
-          <li><a href="//github.com/jittuu" class="button">on github</a></li>
-          <li><a href="//twitter.com/jittuu" class="button">@twitter</a></li>
-          <li><a href="mailto:soemoetunlwin@gmail.com" class="button">via email</a></li>
-        </ul>
-      </div>
-      <hr class="space" />
-      <hr class="space" />
-
-      <div id="content" class="span-24">
-        {{ content }}
+    <div class="pure-g-r" id="layout">
+      <div class="sidebar pure-u">
+        <header class="header">
+          <hgroup>
+            <h1 class="brand-title">Jittuu's blog</h1>
+            <h2 class="brand-tagline">crafting software</h2>
+          </hgroup>
+        </header>
       </div>
 
-      <div id="footer" class="span-24">
-          <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
-          <span>
-            This website and code snippets is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a> unless otherwise specified.
-          </span>
-          <br />
+      <div class="pure-u-1">
+        <div class="content">
+
+          {{ content }}
+          <footer class="footer">
+          <div class="pure-menu pure-menu-horizontal pure-menu-open">
+            <ul>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="//twitter.com/jittuu">Twitter</a></li>
+              <li><a href="//github.com/jittuu">Github</a></li>
+            </ul>
+          </div>
+          </footer>
+        </div>
       </div>
-      <span class="small quiet right">
-        Powered by <a href="http://jekyllrb.com">Jekyll</a>. Some icons by <a href="http://icondock.com">IconDock</a>.
-      </span>
     </div>
   </body>
 </html>

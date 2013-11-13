@@ -4,16 +4,19 @@ layout: default
 
 {% assign post = page %}
 
-<div class="post">
-    <h1>{{ post.title | xml_escape }}</h1>
-    <span class="quiet small">{{ post.date | date_to_string }}</span>
-    <hr />
+<section class="post">
+  <header class="post-header">
+    <h2 class="post-title">{{ post.title | xml_escape }}</h2>
+    <p class="post-meta">{{ post.date | date_to_string }}</p>
+  </header>
 
+  <div class="post-content">
     {{ content }}
-</div>
+  </div>
+</section>
 
 <div id="disqus_thread"></div>
-<script type="text/javascript">    
+<script type="text/javascript">
     var disqus_shortname = 'jittuu';
     var disqus_identifier = '{{ page.url }}';
 
