@@ -28,8 +28,8 @@ li img { display: block; }
 }
 
 .header {
-    font-family: "Segoe UI Light", "Segoe UI", "Helvetica Neue", sans-serif;
-    font-weight: lighter;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI Light", "Segoe UI", "Helvetica Neue", sans-serif;
+    font-weight: 300;
     margin: 50% 2em 0;
     text-align: right;
 }
@@ -53,20 +53,20 @@ li img { display: block; }
     padding-bottom: 2em;
 }
 .post-title {
-    font-family: "Segoe UI Light", "Segoe UI", "Helvetica Neue", sans-serif;
-    font-weight: lighter;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI Light", "Segoe UI", "Helvetica Neue", sans-serif;
+    font-weight: 300;
     font-size: 2em;
     color: #222;
     margin-bottom: 0.2em;
 }
 .post-meta {
-    font-family: 'Segoe UI', Helvetica, Tahoma, Arial, sans-serif;
+    font-family: "Helvetica Neue", 'Segoe UI', Helvetica, Tahoma, Arial, sans-serif;
     color: #999;
     font-size: 90%;
     margin: 0;
 }
 .post-content {
-    font-family: 'Segoe UI', Helvetica, Tahoma, Arial, Helvetica, sans-serif;
+    font-family: "Helvetica Neue", 'Segoe UI', Helvetica, Tahoma, Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 1.5em;
 }
