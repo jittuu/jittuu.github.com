@@ -7,7 +7,7 @@ a:focus {
     text-decoration: underline;
 }
 
-pre, code, tt {font:1em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
+pre, code, tt {font:0.95em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
 
 li img { display: block; }
 
