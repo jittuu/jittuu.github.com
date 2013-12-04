@@ -55,10 +55,17 @@ li img { display: block; }
 .post-title {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI Light", "Segoe UI", "Helvetica Neue", sans-serif;
     font-weight: 300;
-    font-size: 2em;
+    font-size: 2.5em;
     color: #222;
     margin-bottom: 0.2em;
 }
+.post-title a {
+  color: #222;
+}
+.post-title a:hover, .post-title a:focus {
+  text-decoration: none;
+}
+
 .post-meta {
     font-family: "Helvetica Neue", 'Segoe UI', Helvetica, Tahoma, Arial, sans-serif;
     color: #999;
