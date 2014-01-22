@@ -15,7 +15,7 @@ So, how should we move from red to green? Simple. We need to get _more_ things d
 - **Email rule**. CC means _FYI_. Put all CC mails in one folder and read it all in _scheduled_ time.
 - **Checking email**. _Don't check_ email in the _morning_. We are using scrum, we should know what to do at our morning stand-up meeting. _Schedule_ to check your mail, e.g. check email after lunch.
 - **Pomodoro**. If you don't know, go and [read about it][pomodoro]. And _use_ it. I usually target to achieve 4-6 pomodori. Yes. There is _max limit_ for me.
-- **Chrome tabs**. Many chrome tabs usually means we are wasting memory and overloaded with too many information. Close what you don't need it.
+- **Chrome tabs**. Many chrome tabs usually means we are wasting memory and overloaded with too many information. Close what you don't need.
 
 
 [talk]:http://www.youtube.com/watch?v=FS1mnISoG7U
