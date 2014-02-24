@@ -41,6 +41,12 @@ li img { display: block; }
 .brand-title {
     text-transform: uppercase;
 }
+.brand-title a {
+  color: #fff;
+}
+.brand-title a:hover, .brand-title a:focus {
+  text-decoration: none;
+}
 .brand-tagline {
     font-weight: 300;
     color: rgb(142, 142, 214);
