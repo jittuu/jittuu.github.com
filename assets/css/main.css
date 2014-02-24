@@ -74,7 +74,8 @@ li img { display: block; }
 }
 .post-content {
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.5em;
+    font-size: 14px;
+    line-height: 1.6em;
 }
 div.pagination .older { float: left; }
 div.pagination .newer { float: right; }
