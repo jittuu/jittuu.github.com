@@ -7,6 +7,11 @@ a:focus {
     text-decoration: underline;
 }
 
+h1, h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+
 pre, code, tt {font:0.95em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
 
 li img { display: block; }
