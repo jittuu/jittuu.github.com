@@ -5,7 +5,7 @@ title: "Multitenancy - Data"
 
 When dealing with data in multi-tenancy application, we have think about physical storage and extensibility.
 
-## Physical storage
+# Physical storage
 
 Regarding storing data in RDBMS, especially in SQL Server, we have a few options.
 
@@ -20,7 +20,7 @@ The first option looks simpler compare to the second one, but if we think about 
  - **Scaling** - I think, this is the major issue of shared database instance. The option to scale horizontally in Sql Server is through [partitioning][]. It is way more complex than putting multiple db instances on multiple servers. And it also have flexibility to make more pricing options such as dedicated db server for one tenant.
  - **Release Management** - This is one advantage of shared database instance. It is much easier to add one more record in database than creating new database, setting up security option, etc. Of curse, we still can automate this but it is more complex than shared db instance.
  
-## Extensibility
+# Extensibility
 
 When tenants want to customize _behaviour_ of the system, they usually require some _custom data_ to work with. We also have some patterns to work with:
 
