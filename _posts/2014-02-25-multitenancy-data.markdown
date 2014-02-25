@@ -3,7 +3,7 @@ layout: post
 title: "Multitenancy - Data"
 ---
 
-When dealing with data in multi-tenancy application, we have think about physical storage and extensibility.
+When dealing with data in multi-tenancy application, we have to think about physical storage and extensibility.
 
 # Physical storage
 
@@ -22,9 +22,9 @@ The first option looks simpler compare to the second one, but if we think about 
  
 # Extensibility
 
-When tenants want to customize _behaviour_ of the system, they usually require some _custom data_ to work with. We also have some patterns to work with:
+When tenants want to customize _behaviour_ of the system, they usually require some _custom data_ to work with. We also have some patterns to work with custom data:
 
- - **Preallocated Fields** - such as Field1, Field2, Field3, etc.It will usually lead to _maintenace nightmare_ because the developer have no idea what is the usage of Field1. Field1 can be different usages for different tenants as well.
+ - **Preallocated Fields** - such as Field1, Field2, Field3, etc.It will usually lead to _maintenace nightmare_ because the developer have no idea what is the usage of Field1. Field1 can also be different usages for different tenants.
  - **Name-Value Pairs** - with one value table (TenantId, ExtId, Value) and one meta table (TenantId, ExtId, ValueDesc, ValueDataType). The main dis-advantage is query. It is very complicated to make efficient query with those kind of tables. The performance is usually the issue when data grow.
  - **Custom Columns** - directly add more columns to existing table. It is the simplest solution to data extensibility. The only drawback is conflicts between customer-defined-column and newly-added-column. It can happen when we want to add new column in next version but customer alread use that column. E.g. After we release v1, tenant A add "Location" column to customer table. When we want to add "Location" column in v2, we have conflict with tenant A.
  - **xxxxx_Extented** - add one-to-one relationship extended table to existing table. By doing this, we still have simplicity to work with custom data since we just need a single join, as well as solving the versioning issue. E.g. Cusomter table and Customer_Extended table with additional tenant-added-columns.
