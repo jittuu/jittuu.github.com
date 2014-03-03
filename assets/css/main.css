@@ -59,6 +59,7 @@ li img { display: block; }
 
 .content {
     padding: 2em 3em 0;
+    max-width: 800px;
 }
 .post {
     padding-bottom: 2em;
