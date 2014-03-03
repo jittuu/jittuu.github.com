@@ -5,7 +5,7 @@ title: "Multitenancy"
 
 [Multitenancy][] is defined in wiki as:
 
-> Multitenancy refers to a principle in software architecture where a single instance of the software runs on a server, serving multiple client-organizations (tenants). Multitenancy contrasts with multi-instance architectures where separate software instances (or hardware systems) operate on behalf of different client organizations. With a multitenant architecture, a software application is designed to virtually partition its data and configuration, and each client organization works with a customized virtual application.
+_Multitenancy refers to a principle in software architecture where a single instance of the software runs on a server, serving multiple client-organizations (tenants). Multitenancy contrasts with multi-instance architectures where separate software instances (or hardware systems) operate on behalf of different client organizations. With a multitenant architecture, a software application is designed to virtually partition its data and configuration, and each client organization works with a customized virtual application._
 
 In the cloud computing, it is SaaS (Software as a Service) with some customizations. In this kind of application, the complexity is customization. If it only allows to customize skinning and allow to add some additional fields, it mostly works like normal single-tenant application. But if it allows to customize behavior of the applications, it is different story.
 
