@@ -1,6 +1,6 @@
 a {
     text-decoration: none;
-    color: rgb(142, 142, 214);
+    color: #268bd2;
 }
 a:hover,
 a:focus {
@@ -38,7 +38,7 @@ blockquote {
     bottom: 0;
     width: 20%;
     margin-left: -20%;
-    background: rgb(24, 33, 61);
+    background: #002b36;
     color: #fff;
 }
 
@@ -64,7 +64,7 @@ blockquote {
 }
 .brand-tagline {
     font-weight: 300;
-    color: rgb(142, 142, 214);
+    color: #268bd2;
 }
 
 .content {
