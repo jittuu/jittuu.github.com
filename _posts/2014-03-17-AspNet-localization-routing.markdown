@@ -25,7 +25,7 @@ For revisiting users - users with stored locale cookie;
 
 First, I create a simple [HttpHandler][] to handle redirection.
 
-```csharp
+{% highlight csharp %}
 using System.Diagnostics.CodeAnalysis;
 using System.Web;
 
@@ -53,11 +53,11 @@ namespace MvcLocalization
         }
     }
 }
-```
+{% endhighlight %}
 
 I create [RouteHandler][],a hook to Asp.Net routing, to handle redirection for _without localization token in url_  and a wrapper handler of [MvcRouteHandler][] to handle other cases. `LocalizedRouteHandler` update current thread's culture information before it delegate to `MvcRouteHandler`. I believe that the comment in the code should explain well itself.
 
-```csharp
+{% highlight csharp %}
 using System.Globalization;
 using System.Web;
 using System.Web.Mvc;
@@ -84,10 +84,10 @@ namespace MvcLocalization
         }
     }
 }
-```
+{% endhighlight %}
 
 
-```csharp
+{% highlight csharp %}
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -161,11 +161,11 @@ namespace MvcLocalization
         }
     }
 }
-```
+{% endhighlight %}
 
 Now, we need to hook that route handler to the routing. Just to be neat, I created extension method to [RouteCollection][] and added to the routes table when application starts.
 
-```csharp
+{% highlight csharp %}
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -202,9 +202,9 @@ namespace MvcLocalization
         }
     }
 }
-```
+{% endhighlight %}
 
-```csharp
+{% highlight csharp %}
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -227,7 +227,7 @@ namespace MvcLocalization.Sample
         }
     }
 }
-```
+{% endhighlight %}
 
 That's it! Now, you have localization-aware mvc application. Of course, I created [github repo](https://github.com/jittuu/MvcLocalization) for the whole source code and sample web application.
 
