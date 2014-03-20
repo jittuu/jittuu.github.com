@@ -4,10 +4,11 @@ title: ASP.NET MVC Localization - Routing
 ---
 
 When we build multi-language web application, we have to think:
+
   1. where should we store localization token, and
   2. the application flow for first-time users and revisiting-users.
 
-I prefer to store localization token in the URL because it is SEO-friendly and cache-friendly. For examples, `http://www.microsoft.com/en-us/default.aspx`.
+I prefer to store localization token _in the URL_ because it is SEO-friendly and cache-friendly. For examples, `http://www.microsoft.com/en-us/default.aspx`.
 
 For the first time users - users without stored locale cookie:
 
@@ -16,12 +17,10 @@ For the first time users - users without stored locale cookie:
 
 For revisiting users - users with stored locale cookie;
 
-  - when he/she navigate to page _without_ localization token, we need to redirect to localized url based on the users' cookie.
+  - when he/she navigate to page _without_ localization token, we need to redirect to localized url based on the user's cookie.
   - when he/she navigate to page _with_ localization token, we have two scenarios. If the url token and the cookie value are the same, we just need to serve the request. If the url token and the cookie value are different, we take cookie value as higher priority (he/she might click url from somewhere). In that case, we need to redirect to url with localization token - which is from cookie.
 
 # Implementation
-
-> Enough talking, Show me the code!. 
 
 First, I create a simple [HttpHandler][] to handle redirection.
 
@@ -55,7 +54,7 @@ namespace MvcLocalization
 }
 {% endhighlight %}
 
-I create [RouteHandler][],a hook to Asp.Net routing, to handle redirection for _without localization token in url_  and a wrapper handler of [MvcRouteHandler][] to handle other cases. `LocalizedRouteHandler` update current thread's culture information before it delegate to `MvcRouteHandler`. I believe that the comment in the code should explain well itself.
+I create [RouteHandler][],a hook to Asp.Net routing, to handle redirection for _without localization token in url_.
 
 {% highlight csharp %}
 using System.Globalization;
@@ -86,6 +85,7 @@ namespace MvcLocalization
 }
 {% endhighlight %}
 
+And a wrapper handler of [MvcRouteHandler][] to handle other cases. `LocalizedRouteHandler` update current thread's culture information before it delegate to `MvcRouteHandler`. I believe that the comment in the code should explain well itself.
 
 {% highlight csharp %}
 using System;
@@ -163,7 +163,7 @@ namespace MvcLocalization
 }
 {% endhighlight %}
 
-Now, we need to hook that route handler to the routing. Just to be neat, I created extension method to [RouteCollection][] and added to the routes table when application starts.
+Now, we need to hook that route handler to the routing. Just to be neat, I created extension method to [RouteCollection][].
 
 {% highlight csharp %}
 using System.Web.Mvc;
@@ -203,6 +203,8 @@ namespace MvcLocalization
     }
 }
 {% endhighlight %}
+
+And added to the routes table when application starts.
 
 {% highlight csharp %}
 using System.Web.Mvc;
