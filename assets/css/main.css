@@ -14,6 +14,13 @@ h1, h2 {
 
 pre, code, tt {font:0.95em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
 
+:not(pre) > code {
+    border: 1px solid #ddd;  
+    background-color: #f8f8f8;  
+    border-radius: 3px;
+    padding: 2px;
+}
+
 li img { display: block; }
 
 blockquote {
