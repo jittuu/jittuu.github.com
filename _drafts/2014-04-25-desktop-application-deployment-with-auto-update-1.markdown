@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Desktop Application deployment with auto update (Shimmer/Squirrel)
+title: Desktop Application deployment with auto update (Shimmer/Squirrel) - 1
 ---
 
 Recently, I'm working on a desktop application. Deployment is always a challenge for the desktop application. There is [ClickOnce][] for .Net application, but it doesn't work perfectly. You can find more issues that are [faced by GitHub for WIndows Team][GHFWIssues]. I trust the Github guys and want to give it a try [Squirrel][] for ClickOnce replacement.
@@ -37,7 +37,7 @@ and, I update `AssemblyInfo.cs` with
 
 That's it! This is the only changes I made in `File -> New` WPF application (.Net Framework 4).
 
-## ~Squirrel~ Shimmer
+## Squirrel (a.k.a Shimmer)
 
 I follow [QuickStart][] from the wiki of Squirrel. But when I reach to [Publish Release][] state, the `New-Release` cmdlet is not found. After spending a few hours, I notice that **Squirrel package is not ready** yet (as of 25 April 2014) and there is already [pull request][PR211] about it. So, I just use old version [Shimmer][] by `Install-Package Shimmer`. It will download all the dependencies and open `nuspec` file for you.
 
@@ -138,25 +138,16 @@ At C:\Users\soe.moe\documents\visual studio 2013\Projects\Banshee\packages\Shimm
     + CategoryInfo          : InvalidOperation: (Split:String) [], RuntimeException
     + FullyQualifiedErrorId : MethodNotFound
     ```
-  7. I tried to clear `Releases` folder and `*.nupkg` in the output folder.
-  8. It works after I clear, but I didn't generate _delta_ package.
-  9. If I don't clear `Releases` folder, the error is back. :sweat:
+ 7. I tried to clear `Releases` folder and `*.nupkg` in the output folder.
+ 8. It works after I clear, but I didn't generate _delta_ package.
+ 9. If I don't clear `Releases` folder, the error is back. :sweat:
   
 Hmm... OK. I'll break down into a few problems; 
   1. If it can generate delta package, it **cannot** generate setup.exe.
   2. If it can generate setup.exe and full package, it **cannot** generate delta package.
   3. How about `RELEASE` file? Above two generate two different `RELEASE` file.
   
-Let's check delta package first.
-
- 1. I leave `1.0.0-beta-full.nupkg` package and RELEASE file in the Releases folder.
- 2. Clean the solution.
- 3. Rebuild the solution
- 4. Publish new release with `New-Release`
- 5. I _Ignore_ error for now.
- 6. Copy three files, `RELEASE` and two full and delta packages of new version, to the server
- 7. Run the _installed_ application.
- 8. Woof! It was updated to new version.
+I'm a bit tired now, let's call it a day. I'll find about more and will post again.
 
 [ClickOnce]: http://msdn.microsoft.com/clickonce
 [GHFWIssues]: https://github.com/Squirrel/Squirrel.Windows/issues/82
