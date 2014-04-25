@@ -132,11 +132,7 @@ For new version, I did:
  5. Publish new release with `New-Release`
  6. Then I got this error.
     ```
-    Method invocation failed because [System.Object[]] doesn't contain a method named 'Split'.
-At C:\Users\soe.moe\documents\visual studio 2013\Projects\Banshee\packages\Shimmer.0.7.4\tools\commands.psm1:77 char:41
-+         $packages = $releaseOutput.Split <<<< (";")
-    + CategoryInfo          : InvalidOperation: (Split:String) [], RuntimeException
-    + FullyQualifiedErrorId : MethodNotFound
+    Method invocation failed because [System.Object[]] doesn't contain a method named 'Split'. At C:\Users\soe.moe\documents\visual studio 2013\Projects\Banshee\packages\Shimmer.0.7.4\tools\commands.psm1:77 char:41 + $packages = $releaseOutput.Split <<<< (";") + CategoryInfo : InvalidOperation: (Split:String) [], RuntimeException + FullyQualifiedErrorId : MethodNotFound
     ```
  7. I tried to clear `Releases` folder and `*.nupkg` in the output folder.
  8. It works after I clear, but I didn't generate _delta_ package.
