@@ -3,3 +3,7 @@ server: true
 paginate: 5
 pygments: true
 markdown: rdiscount
+gems:
+- jekyll-mentions
+- jemoji
+- jekyll-redirect-from
