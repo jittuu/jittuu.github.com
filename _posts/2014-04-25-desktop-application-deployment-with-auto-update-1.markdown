@@ -139,6 +139,7 @@ For new version, I did:
  9. If I don't clear `Releases` folder, the error is back. :sweat:
   
 Hmm... OK. I'll break down into a few problems; 
+
   1. If it can generate delta package, it **cannot** generate setup.exe.
   2. If it can generate setup.exe and full package, it **cannot** generate delta package.
   3. How about `RELEASE` file? Above two generate two different `RELEASE` file.
