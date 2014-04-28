@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Desktop Application deployment with auto update (Shimmer/Squirrel) - 1
+title: Desktop Application deployment with auto update (Shimmer/Squirrel) - not working (yet)
 ---
 
 Recently, I'm working on a desktop application. Deployment is always a challenge for the desktop application. There is [ClickOnce][] for .Net application, but it doesn't work perfectly. You can find more issues that are [faced by GitHub for WIndows Team][GHFWIssues]. I trust the Github guys and want to give it a try [Squirrel][] for ClickOnce replacement.
