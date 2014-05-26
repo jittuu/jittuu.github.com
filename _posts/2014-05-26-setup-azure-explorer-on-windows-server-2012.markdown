@@ -3,6 +3,15 @@ layout: post
 title: Using Azure Explorer on Windows Server 2012
 ---
 
+## TL;DR
+
+1. add http://installers.cerebrata.com into the Trusted sites
+2. add https://cerebratainstallers.blob.core.windows.net into the Trusted sites
+3. go to [download][] and install
+
+
+## More
+
 I use [Azure Explorer][] from cerebrata to work with [azure storage][storage]. Today, I need to use it at my azure VM with Windows Server 2012. 
 
 I opened IE and go to [download][] Azure Explorer - then I got this error.
