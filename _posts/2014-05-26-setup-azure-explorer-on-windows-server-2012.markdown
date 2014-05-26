@@ -5,8 +5,8 @@ title: Using Azure Explorer on Windows Server 2012
 
 # TL;DR
 
-1. add http://installers.cerebrata.com into the Trusted sites
-2. add https://cerebratainstallers.blob.core.windows.net into the Trusted sites
+1. add <http://installers.cerebrata.com> into the Trusted sites
+2. add <https://cerebratainstallers.blob.core.windows.net> into the Trusted sites
 3. go to [download][] and install
 
 
@@ -19,7 +19,7 @@ I opened IE and go to [download][] Azure Explorer - then I got this error.
 ![error 1](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/azure-explorer-1.png)
 
 
-As error suggest, I added http://installers.cerebrata.com into the Trusted sites. And I tried to download again. This time I got this error;
+As error suggest, I added <http://installers.cerebrata.com> into the Trusted sites. And I tried to download again. This time I got this error;
 
 ![error 2](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/azure-explorer-2.png)
 
@@ -33,7 +33,7 @@ Server		: Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
 Deployment and application do not have matching security zones.
 ```
 
-This time I add https://cerebratainstallers.blob.core.windows.net into the Trusted sites and download _again_. Now it shows me Security Warning and I just click install since I know what I'm installing. :)
+This time I add <https://cerebratainstallers.blob.core.windows.net> into the Trusted sites and download _again_. Now it shows me Security Warning and I just click install since I know what I'm installing. :)
 
 ![security warning](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/azure-explorer-3.png)
 
