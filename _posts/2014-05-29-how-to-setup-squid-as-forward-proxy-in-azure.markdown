@@ -3,11 +3,11 @@ layout: post
 title: "How to set up squid as forward proxy in Azure"
 ---
 
-I was playing with [squid][] to set up as [forward proxy][]. If you are not sure about proxy, there a [great answer][proxy-answer] about proxies. In this post, I will use Azure as Cloud platform, but it should also work on Amazon as well.
+I was playing with [squid][] to set up as [forward proxy][]. If you are not sure about proxy, there a [great answer][proxy-answer] at stackoverflow. In this post, I will use Azure as Cloud platform, but it should also work on Amazon as well.
 
 # Set up a Linux VM
 
-We will first create a linux VM using Azure [portal][]. TODO: summary of the whole steps.
+We will first create a linux VM using Azure [portal][] and later we use _PuTTy_ to access.
 
 From azure portal, I'll go `NEW | COMPUTE | VIRTUAL MACHINE | FROM GALLERY` and choose Ubuntu.
 
@@ -52,10 +52,13 @@ $ sudo chmod 640 passwd
 ```
 
 We don't need to change the owner and permission to make squid works, but it’s good security practice. If you check the file,
+
 ```
 $ ls -l passwd
 ```
+
 you should see this - of course, the date and time will be different.
+
 ```
 -rw-r----- 1 proxy proxy 0 May 29 09:02 passwd
 ```
@@ -69,7 +72,7 @@ New password:
 Re-type new password:
 ```
 
-We can test the new user with squid digest auth as below. (of course, md5 hash will be different. If the same, we are using the same password. :smile:)
+We can test the new user with squid digest auth as below. (of course, md5 hash will be different. If the same, we are using the same password. :smiling_imp:)
 
 ```
 $ sudo /usr/lib/squid3/digest_file_auth -c /etc/squid3/passwd
@@ -108,6 +111,7 @@ $ sudo service squid3 restart
 At azure, we still need to open the endpoint of the vm. Go to `VIRTUAL MACHINES | <vm> | ENDPOINTS`
 
 ![endpoint](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/squid-5.png)
+
 For now, we will just use standalone endpoint and specify the endpoint details with the port squid use.
 
 ![standalone](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/squid-6.png)
@@ -144,6 +148,7 @@ via off
 ```
 
 We restart squid to reload the config.
+
 ```
 $ sudo service squid3 restart
 ```
