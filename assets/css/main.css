@@ -14,6 +14,16 @@ h1, h2 {
 
 pre, code, tt {font:0.95em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
 
+:not(.highlight) > pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
 :not(pre) > code {
     border: 1px solid #ddd;  
     background-color: #f8f8f8;  
