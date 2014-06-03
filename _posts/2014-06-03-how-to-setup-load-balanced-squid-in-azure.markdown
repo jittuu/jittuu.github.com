@@ -1,7 +1,7 @@
 ---
 layout: post
 published: false
-title: "How to set up squid as forward proxy in Azure - with load balancing"
+title: "How to set up load balanced squid in Azure"
 ---
 
 In my [previous post][], we have setup squid as forward proxy. In this post, we are going to add loading balancing feature.
