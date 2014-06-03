@@ -43,15 +43,24 @@ We are going to create our first VM of load balancing set from the captured Imag
 	![capture virtual machine](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/lb-squid-4.png)
 4. Choose the cloud service - in my case, I choose the old one since I just delete vm while capturing as image, but not the cloud service.
 	![capture virtual machine](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/lb-squid-5.png)
-5. Configure virtual machine. I check the `the VM agent that supports extensions is already installed`. I think Linux image already have VM agent. (That one I'm not very sure. Anyway, we are not using any extensions, I think it doesn't matter)
+5. Configure virtual machine. I **uncheck** the `the VM agent that supports extensions is already installed` since we are not using any extensions.
 	![capture virtual machine](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/lb-squid-6.png)
 6. Go to `VIRTUAL MACHINES | <your instance> | ENDPOINTS` and click **ADD** on the command bar.
 7. Configure endpoint as Load-balanced set.
 	![capture virtual machine](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/lb-squid-7.png)
 
+Before we add another VM, try to configure proxy in your browser and test it. For instance, this is the setting for firefox.
+
+![capture virtual machine](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/lb-squid-8.png)
+
 # Add one more VM to load-balanced set
 
 Repeat the same steps as creating first VM. _The only important thing is that **make sure to use the same cloud service as first VM**_
+
+We add endpoint for squid as load-balanced set.
+
+![capture virtual machine](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/lb-squid-9.png)
+
 
 [previous post]:(http://www.jittuu.com/2014/5/29/how-to-setup-squid-as-forward-proxy-in-azure/)
 [PuTTy]:http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
