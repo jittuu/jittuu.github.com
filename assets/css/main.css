@@ -9,7 +9,8 @@ a:focus {
 
 h1, h2 {
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
+    letter-spacing: -0.02em;
 }
 
 pre, code, tt {font:0.95em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
@@ -92,10 +93,7 @@ blockquote {
     padding-bottom: 2em;
 }
 .post-title {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 300;
     font-size: 3.5em;
-    color: #222;
     margin-bottom: 0.2em;
 }
 .post-title a {
