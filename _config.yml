@@ -1,7 +1,6 @@
 permalink: /:year/:i_month/:i_day/:title
-server: true
 paginate: 5
-pygments: true
+highlighter: pygments
 markdown: rdiscount
 gems:
 - jekyll-mentions
