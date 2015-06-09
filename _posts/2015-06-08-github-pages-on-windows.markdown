@@ -3,7 +3,7 @@ layout: post
 title: "Set up github pages with jekyll on Windows"
 ---
 
-I re-setup [jekyll][] on my PC since I [did it 3 years ago][1]. It is much easier to setup jekyll on windows - thanks to `bundler` and `github-pages` gem.
+I re-setup [jekyll][] on my PC as I didn't upgrade since I [did it 3 years ago][1]. It is much easier to setup jekyll on windows - thanks to `bundler` and `github-pages` gem.
 
 Here is the steps:
 
