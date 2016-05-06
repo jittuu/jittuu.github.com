@@ -1,8 +1,9 @@
 permalink: /:year/:i_month/:i_day/:title
 paginate: 5
-highlighter: pygments
-markdown: rdiscount
+highlighter: rouge
+markdown: kramdown
 gems:
+- jekyll-paginate
 - jekyll-mentions
 - jemoji
 - jekyll-redirect-from
