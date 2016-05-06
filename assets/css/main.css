@@ -13,7 +13,7 @@ h1, h2 {
     letter-spacing: -0.02em;
 }
 
-pre, code, tt {font:0.95em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
+pre, code, tt {font:1em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
 
 :not(.highlight) > pre {
     background-color: #f8f8f8;

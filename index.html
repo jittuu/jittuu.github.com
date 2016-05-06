@@ -24,12 +24,12 @@ title: Jittuu's craftsmanship
 <div class="pagination">
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-      <a href="/" class="button newer">Newer Posts<span>&rightarrow;<span></a>
+      <a href="/" class="button newer"><span>Newer Posts </span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
     {% else %}
-    <a href="/page{{paginator.previous_page}}" class="button newer">Newer Posts<span>&rightarrow;</span></a>
+    <a href="/page{{paginator.previous_page}}" class="button newer"><span>Newer Posts </span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
     {% endif %}
   {% endif %}
   {% if paginator.next_page %}
-  <a href="/page{{paginator.next_page}}" class="button older"><span>&leftarrow;<span>Older Posts</a>
+  <a href="/page{{paginator.next_page}}" class="button older"><i class="fa fa-angle-left" aria-hidden="true"></i><span> Older Posts</span></a>
   {% endif %}
 </div>
