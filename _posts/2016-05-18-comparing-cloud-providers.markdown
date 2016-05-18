@@ -84,7 +84,7 @@ I will try to break down into a few software development processes so that we ca
 
 Yes. This is SDLC for our team. We are targeting to release multiple times per day. Small, fast and incremental releases.
 
-Before we dive into each process, let's talk about the basic architecture of the application - so that we could ignore un-related offers from providers as there are way too many features.
+The following table contains some components which hasn't covered by the basic architecture components.
 
 |            | AWS               | Azure                | Google Cloud Platform    |
 |------------|-------------------|----------------------|--------------------------|
