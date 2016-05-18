@@ -102,7 +102,8 @@ Visual Studio Team services included everything from CI to deployment and it is 
 
 ## Monitoring.
 
-There are only two contenders, Azure and Google Cloud Platform. I didn't have good experience with Application Insights - to be fair it is still in preview. 
+There are only two contenders, Azure and Google Cloud Platform. I didn't have good experience with Application Insights - to be fair it is still in preview.
+
 - It is no stable yet ([7 incidents on May alone](https://blogs.msdn.microsoft.com/applicationinsights-status/))
 - The portal is **slow**
 - No API (to read data) yet.
