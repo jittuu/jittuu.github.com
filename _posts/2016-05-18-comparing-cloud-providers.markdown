@@ -59,6 +59,7 @@ Managed services mean server is maintained by provider. The higher number, the b
 ## Storage
 
 The base line is
+
 - 10 GB storage 
 - PUT/LIST ops 1million
 - GET object ops 10million
