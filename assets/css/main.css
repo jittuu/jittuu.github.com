@@ -13,6 +13,11 @@ h1, h2 {
     letter-spacing: -0.02em;
 }
 
+h2 {
+    font-weight: 600;
+    margin: 1em 0;
+}
+
 pre, code, tt {font:1em 'consolas', Menlo, Monaco, 'lucida console', monospace;line-height:1.5;}
 
 :not(.highlight) > pre {
@@ -36,6 +41,18 @@ blockquote {
     padding-left: 15px;
     border-left: 3px solid #ccc;
     color: #777;
+}
+
+table th, table td {
+    padding: 0.5rem;
+}
+
+thead th {
+    border-bottom: 3px double #268bd2;
+}
+
+tbody td {
+    border-bottom: 1px solid #268bd2;    
 }
 
 /* LAYOUT CSS */
