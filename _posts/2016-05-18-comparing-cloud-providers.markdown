@@ -40,7 +40,8 @@ The following table describes the components and related cloud features.
 
 Managed services mean server is maintained by provider. The higher number, the better. I gave Azure WebSites to 4 because it doesn't have other features compare to AppEngine such as version splitting, no downtime deployment, no free centralize cache (memcache/redis), etc.
 
-*_price is estimated for two environments_ 
+*_price is estimated for two environments_
+
 - AWS: 1 year no-upfront (1x t2.small, 1x t2.medium)
 - Azure: (1x B1, 1x S2)
 - AppEngine: (1x free quota, 1x n1-standard-1 flex-vm) _assuming that we got more traffic than what free quota provides._
