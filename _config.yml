@@ -2,7 +2,7 @@ permalink: /:year/:i_month/:i_day/:title
 paginate: 5
 highlighter: rouge
 markdown: kramdown
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-mentions
   - jemoji
