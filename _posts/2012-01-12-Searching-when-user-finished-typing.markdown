@@ -3,7 +3,7 @@ layout: post
 title: "Searching when user finished typing (AJAX)"
 ---
 
-![searching](http://i.imgur.com/27Sq4.png)
+![searching](//i.imgur.com/27Sq4.png)
 
 My application has a search field.
 
@@ -11,19 +11,19 @@ I want to search with criteria just after user **stop** typing for 200ms like ab
 
 {% highlight javascript %}
 var delay = (function() {
-  var timeoutId = 0;
-  return function(callback, ms) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(callback, ms);
-  }
+var timeoutId = 0;
+return function(callback, ms) {
+clearTimeout(timeoutId);
+timeoutId = setTimeout(callback, ms);
+}
 })();
 
-$("input#search").keyup(function() {
-  delay(function() {
-    // invoke ajax for searching..
-    // in here I'll use alert as DEMO
-    alert("Seaching.. now!");
-  }, 200);
+\$("input#search").keyup(function() {
+delay(function() {
+// invoke ajax for searching..
+// in here I'll use alert as DEMO
+alert("Seaching.. now!");
+}, 200);
 });
 {% endhighlight %}
 
@@ -33,7 +33,7 @@ The interesting part is the _delay_ variable. Lets see what was happened in deta
 
 {% highlight javascript %}
 var delay = (function() {
-  // ....
+// ....
 })();
 {% endhighlight %}
 
@@ -41,8 +41,8 @@ It is called _self-executed_ function. I declared a anonymous function and immed
 
 {% highlight javascript %}
 var delay = (function() {
-  var timeoutId = 0;
-  // ....
+var timeoutId = 0;
+// ....
 })();
 {% endhighlight %}
 
@@ -50,11 +50,11 @@ Then I used _timeoutId_ variable which is used later to clear time out. Because 
 
 {% highlight javascript %}
 var delay = (function() {
-  var timeoutId = 0;
-  return function(callback, ms) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(callback, ms);
-  }
+var timeoutId = 0;
+return function(callback, ms) {
+clearTimeout(timeoutId);
+timeoutId = setTimeout(callback, ms);
+}
 })();
 {% endhighlight %}
 
@@ -62,9 +62,9 @@ Then I return _function_ which is _[closure function][closure]_. _Closure functi
 
 {% highlight javascript %}
 delay(function() {
-  // invoke ajax for searching..
-  // in here I'll use alert as DEMO
-  alert("Seaching.. now!");
+// invoke ajax for searching..
+// in here I'll use alert as DEMO
+alert("Seaching.. now!");
 }, 200);
 {% endhighlight %}
 
@@ -83,5 +83,5 @@ Lets say; user type "Awesome", the keyup event will be fired for A-Aw-Awe-Awes-A
 
 Hope this one saves a few hours for you. :).
 
-[setTimeout]:https://developer.mozilla.org/en/DOM/window.setTimeout
-[closure]:http://stackoverflow.com/a/111200/102940
+[settimeout]: https://developer.mozilla.org/en/DOM/window.setTimeout
+[closure]: //stackoverflow.com/a/111200/102940

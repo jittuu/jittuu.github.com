@@ -19,9 +19,8 @@ The workflow will be:
 
 I have created coding guideline at [HERE](https://gist.github.com/jittuu/9360990). Of course, I would be happy if you can take a look and put some comment on it. :)
 
-
-[coding conventions]: http://en.wikipedia.org/wiki/Coding_conventions
-[StyleCop]: http://stylecop.codeplex.com/
-[FxCop]: http://en.wikipedia.org/wiki/FxCop
-[Retrospective]: http://en.wikipedia.org/wiki/Retrospective#Software_development
-[CI]: http://en.wikipedia.org/wiki/Continuous_integration
+[coding conventions]: //en.wikipedia.org/wiki/Coding_conventions
+[stylecop]: //stylecop.codeplex.com/
+[fxcop]: //en.wikipedia.org/wiki/FxCop
+[retrospective]: //en.wikipedia.org/wiki/Retrospective#Software_development
+[ci]: //en.wikipedia.org/wiki/Continuous_integration

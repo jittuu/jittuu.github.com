@@ -21,7 +21,7 @@ I'll create new `CLOUD SERVICE` as well - if you are wondering what cloud servic
 
 ![cloud service](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/squid-3.png)
 
-Now, I'll use [PuTTy][] to connect the vm (We just need _Putty.exe_). The host name will be _cloud-service-name_.cloudapp.net - in my case, the host name is `squidpxy.cloudapp.net`. 
+Now, I'll use [PuTTy][] to connect the vm (We just need _Putty.exe_). The host name will be _cloud-service-name_.cloudapp.net - in my case, the host name is `squidpxy.cloudapp.net`.
 
 ![putty](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/squid-4.png)
 
@@ -80,7 +80,7 @@ $ sudo /usr/lib/squid3/digest_file_auth -c /etc/squid3/passwd
 01b21a5c47050b4e56d6c1c5540acd8f
 ```
 
-It is the time to configure squid. The default configuration file is in `/etc/squid3/squid.conf` with thousands of line - because it is heavily documented configuration file. I think it is better to create new file than editing the default config. 
+It is the time to configure squid. The default configuration file is in `/etc/squid3/squid.conf` with thousands of line - because it is heavily documented configuration file. I think it is better to create new file than editing the default config.
 
 ```
 $ sudo mv /etc/squid3/squid.conf /etc/squid3/squid.conf.origin
@@ -130,9 +130,9 @@ I'll use Manual proxy configuration
 
 ![firefox manual proxy](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/squid-9.png)
 
-When the browser prompt the dialog box, enter user name and password. You should be able to browse via proxy now. You could test your IP at <http://whatismyipaddress.com/>. It should be different if you test your IP with different browser.
+When the browser prompt the dialog box, enter user name and password. You should be able to browse via proxy now. You could test your IP at <//whatismyipaddress.com/>. It should be different if you test your IP with different browser.
 
-But if you visit <http://www.whatismyip.com/>, you will see like: 
+But if you visit <//www.whatismyip.com/>, you will see like:
 
 ![no privacy](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/squid-10.png)
 
@@ -153,15 +153,15 @@ We restart squid to reload the config.
 $ sudo service squid3 restart
 ```
 
-Now, if you visit <http://www.whatismyip.com/>, the server should not able to detect you are behind the proxy.
+Now, if you visit <//www.whatismyip.com/>, the server should not able to detect you are behind the proxy.
 
 ![privacy](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/squid-11.png)
 
 I hope this post will help someone who want to set up squid as forward proxy in azure.
 
-[squid]:http://www.squid-cache.org/
-[forward proxy]:http://en.wikipedia.org/wiki/Proxy_server#Forward_proxies
-[proxy-answer]:http://stackoverflow.com/a/366212
-[portal]:http://azure.microsoft.com/en-us/
-[putty]:http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-[htdigest]:http://httpd.apache.org/docs/2.2/programs/htdigest.html
+[squid]: //www.squid-cache.org/
+[forward proxy]: //en.wikipedia.org/wiki/Proxy_server#Forward_proxies
+[proxy-answer]: //stackoverflow.com/a/366212
+[portal]: //azure.microsoft.com/en-us/
+[putty]: //www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+[htdigest]: //httpd.apache.org/docs/2.2/programs/htdigest.html

@@ -24,7 +24,7 @@ _Explaining about dependency injection is out of scope of this <s>article</s>pos
 
 If we put together with Asp.net MVC, we get the following request and response cycle.
 
-![png](http://i.imgur.com/GkLJM.png)
+![png](//i.imgur.com/GkLJM.png)
 
 Armed with this knowledge, lets start some coding.
 
@@ -32,7 +32,7 @@ First, unit of work which should able to commit and rollback.
 
 {% highlight csharp %}
 public interface IUnitOfWork : IDisposable {
-  int Commit();
+int Commit();
 }
 {% endhighlight %}
 
@@ -40,11 +40,11 @@ Now, <code class="inline">IUnitOfWork</code> has ability to commit and rollback 
 
 {% highlight csharp %}
 public class MyDbContext : DbContext, IUnitOfWork {
-  public DbSet<Project> Projects { get; set; }
+public DbSet<Project> Projects { get; set; }
 
-  public int Commit() {
-    return this.SaveChanges();
-  }
+public int Commit() {
+return this.SaveChanges();
+}
 }
 {% endhighlight %}
 
@@ -53,20 +53,21 @@ To integrate with ASP.net MVC executing pipeline, we should use [ActionFilterAtt
 {% highlight csharp %}
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, Inherited = true, AllowMultiple = false)]
 public class UnitOfWorkAttribute : ActionFilterAttribute {
-  // this property is injected by DI (before action executes)
-  // this post won't cover how this DI inject work.
-  // for more info, please download the attached sample project..
-  [Inject]
-  public IUnitOfWork UnitOfWork { get; set; }
+// this property is injected by DI (before action executes)
+// this post won't cover how this DI inject work.
+// for more info, please download the attached sample project..
+[Inject]
+public IUnitOfWork UnitOfWork { get; set; }
 
-  // after action executed
-  public override void OnActionExecuted(ActionExecutedContext filterContext) {
-      base.OnActionExecuted(filterContext);
+// after action executed
+public override void OnActionExecuted(ActionExecutedContext filterContext) {
+base.OnActionExecuted(filterContext);
 
       if (filterContext.Exception == null) {
           this.UnitOfWork.Commit();
       }
-  }
+
+}
 }
 {% endhighlight %}
 
@@ -75,24 +76,25 @@ After we created <code class="inline">UnitOfWorkAttribute</code>, we just need t
 {% highlight csharp %}
 [UnitOfWork]
 public class ProjectController : Controller {
-  private MyDbContext db;
+private MyDbContext db;
 
-  public ProjectController(IUnitOfWork db) {
-    this.db = (MyDbContext)db;
-  }
+public ProjectController(IUnitOfWork db) {
+this.db = (MyDbContext)db;
+}
 
-  //...
-  //... other actions...
+//...
+//... other actions...
 
-  [HttpPost]
-  public ActionResult Create(Project project) {
-    if (ModelState.IsValid) {
-        db.Projects.Add(project);
-        return RedirectToAction("Index");
-    }
+[HttpPost]
+public ActionResult Create(Project project) {
+if (ModelState.IsValid) {
+db.Projects.Add(project);
+return RedirectToAction("Index");
+}
 
     return View(project);
-  }
+
+}
 }
 {% endhighlight %}
 
@@ -100,8 +102,8 @@ Of course, you can also add **and** update the model, project. Those actions wil
 
 Finally, here is the [sample project][zip] for those who want to see the whole code-base.
 
-[di]:http://martinfowler.com/articles/injection.html
-[uow]:http://martinfowler.com/eaaCatalog/unitOfWork.html
-[orm]:http://en.wikipedia.org/wiki/Object-relational_mapping
-[zip]:https://github.com/downloads/jittuu/jittuu.github.com/UnitOfWorkPattern.zip
-[actionfilter]:http://msdn.microsoft.com/en-us/library/system.web.mvc.actionfilterattribute.aspx
+[di]: //martinfowler.com/articles/injection.html
+[uow]: //martinfowler.com/eaaCatalog/unitOfWork.html
+[orm]: //en.wikipedia.org/wiki/Object-relational_mapping
+[zip]: https://github.com/downloads/jittuu/jittuu.github.com/UnitOfWorkPattern.zip
+[actionfilter]: //msdn.microsoft.com/en-us/library/system.web.mvc.actionfilterattribute.aspx

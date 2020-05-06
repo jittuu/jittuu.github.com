@@ -5,20 +5,20 @@ title: ASP.NET MVC Localization - Routing
 
 When we build multi-language web application, we have to think:
 
-  1. where should we store localization token, and
-  2. the application flow for first-time users and revisiting-users.
+1. where should we store localization token, and
+2. the application flow for first-time users and revisiting-users.
 
-I prefer to store localization token _in the URL_ because it is SEO-friendly and cache-friendly. For examples, `http://www.microsoft.com/en-us/default.aspx`.
+I prefer to store localization token _in the URL_ because it is SEO-friendly and cache-friendly. For examples, `//www.microsoft.com/en-us/default.aspx`.
 
 For the first time users - users without stored locale cookie:
 
-  - when he/she navigate to home page (or any page without localization token), we need to redirect to default localized url. For example, we need to redirect from `http://www.example.com` to `http://www.example.com/en-us`. or from `http://www.example.com/posts` to `http://www.example.com/en-us/posts`. During the redirection, we also need to set the locale cookie for the next visit.
-  - when he/she navigate to page _with_ localization token, we need serve the request with provided locale. In the response, we also need to set the locale cookie.
+- when he/she navigate to home page (or any page without localization token), we need to redirect to default localized url. For example, we need to redirect from `//www.example.com` to `//www.example.com/en-us`. or from `//www.example.com/posts` to `//www.example.com/en-us/posts`. During the redirection, we also need to set the locale cookie for the next visit.
+- when he/she navigate to page _with_ localization token, we need serve the request with provided locale. In the response, we also need to set the locale cookie.
 
 For revisiting users - users with stored locale cookie;
 
-  - when he/she navigate to page _without_ localization token, we need to redirect to localized url based on the user's cookie.
-  - when he/she navigate to page _with_ localization token, we have two scenarios. If the url token and the cookie value are the same, we just need to serve the request. If the url token and the cookie value are different, we take cookie value as higher priority (he/she might click url from somewhere). In that case, we need to redirect to url with localization token - which is from cookie.
+- when he/she navigate to page _without_ localization token, we need to redirect to localized url based on the user's cookie.
+- when he/she navigate to page _with_ localization token, we have two scenarios. If the url token and the cookie value are the same, we just need to serve the request. If the url token and the cookie value are different, we take cookie value as higher priority (he/she might click url from somewhere). In that case, we need to redirect to url with localization token - which is from cookie.
 
 # Implementation
 
@@ -29,10 +29,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Web;
 
 namespace MvcLocalization
-{    
-    class RedirectHandler : IHttpHandler
-    {
-        private string _newUrl;
+{  
+ class RedirectHandler : IHttpHandler
+{
+private string \_newUrl;
 
         [SuppressMessage(category: "Microsoft.Design", checkId: "CA1054:UriParametersShouldNotBeStrings",
             Justification = "We just use string since HttpResponse.Redirect only accept as string parameter.")]
@@ -51,6 +51,7 @@ namespace MvcLocalization
             context.Response.Redirect(this._newUrl);
         }
     }
+
 }
 {% endhighlight %}
 
@@ -64,11 +65,11 @@ using System.Web.Routing;
 
 namespace MvcLocalization
 {
-    public class LocalizationRedirectRouteHandler : IRouteHandler
-    {
-        public IHttpHandler GetHttpHandler(RequestContext requestContext)
-        {
-            var routeValues = requestContext.RouteData.Values;
+public class LocalizationRedirectRouteHandler : IRouteHandler
+{
+public IHttpHandler GetHttpHandler(RequestContext requestContext)
+{
+var routeValues = requestContext.RouteData.Values;
 
             var cookieLocale = requestContext.HttpContext.Request.Cookies["locale"];
             if (cookieLocale != null)
@@ -82,6 +83,7 @@ namespace MvcLocalization
             return new RedirectHandler(new UrlHelper(requestContext).RouteUrl(routeValues));
         }
     }
+
 }
 {% endhighlight %}
 
@@ -101,12 +103,12 @@ using System.Web.Routing;
 
 namespace MvcLocalization
 {
-    public class LocalizedRouteHandler : MvcRouteHandler
-    {
-        protected override System.Web.IHttpHandler GetHttpHandler(System.Web.Routing.RequestContext requestContext)
-        {
-            var urlLocale = requestContext.RouteData.Values["culture"] as string;
-            var cultureName = urlLocale ?? "";
+public class LocalizedRouteHandler : MvcRouteHandler
+{
+protected override System.Web.IHttpHandler GetHttpHandler(System.Web.Routing.RequestContext requestContext)
+{
+var urlLocale = requestContext.RouteData.Values["culture"] as string;
+var cultureName = urlLocale ?? "";
 
             var cookieLocale = requestContext.HttpContext.Request.Cookies["locale"];
             if (cookieLocale != null)
@@ -160,6 +162,7 @@ namespace MvcLocalization
             return new RedirectHandler(new UrlHelper(requestContext).RouteUrl(routeValues));
         }
     }
+
 }
 {% endhighlight %}
 
@@ -171,14 +174,14 @@ using System.Web.Routing;
 
 namespace MvcLocalization
 {
-    public static class RouteCollectionExtensions
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings",
-            Justification = "This is a URL template with special characters, not just a regular valid URL.")]
-        public static Route MapRouteToLocalizeRedirect(this RouteCollection routes, string name, string url, object defaults)
-        {
-            var redirectRoute = new Route(url, new RouteValueDictionary(defaults), new LocalizationRedirectRouteHandler());
-            routes.Add(name, redirectRoute);
+public static class RouteCollectionExtensions
+{
+[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings",
+Justification = "This is a URL template with special characters, not just a regular valid URL.")]
+public static Route MapRouteToLocalizeRedirect(this RouteCollection routes, string name, string url, object defaults)
+{
+var redirectRoute = new Route(url, new RouteValueDictionary(defaults), new LocalizationRedirectRouteHandler());
+routes.Add(name, redirectRoute);
 
             return redirectRoute;
         }
@@ -189,7 +192,7 @@ namespace MvcLocalization
         }
 
         public static Route MapLocalizeRoute(this RouteCollection routes, string name, string url, object defaults, object constraints)
-        {            
+        {
             var route = new Route(
                 url,
                 new RouteValueDictionary(defaults),
@@ -201,6 +204,7 @@ namespace MvcLocalization
             return route;
         }
     }
+
 }
 {% endhighlight %}
 
@@ -212,11 +216,11 @@ using System.Web.Routing;
 
 namespace MvcLocalization.Sample
 {
-    public class RouteConfig
-    {
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+public class RouteConfig
+{
+public static void RegisterRoutes(RouteCollection routes)
+{
+routes.IgnoreRoute("{resource}.axd/{\*pathInfo}");
 
             routes.MapLocalizeRoute("Default",
                 url: "{culture}/{controller}/{action}/{id}",
@@ -228,12 +232,13 @@ namespace MvcLocalization.Sample
                         defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
     }
+
 }
 {% endhighlight %}
 
 That's it! Now, you have localization-aware mvc application. Of course, I created [github repo](https://github.com/jittuu/MvcLocalization) for the whole source code and sample web application.
 
-[HttpHandler]: http://msdn.microsoft.com/en-us/library/bb398986(v=vs.100).aspx#Background
-[MvcRouteHandler]: http://msdn.microsoft.com/en-us/library/system.web.mvc.mvcroutehandler(v=vs.118).aspx
-[RouteHandler]: http://msdn.microsoft.com/en-us/library/cc668201.aspx
-[RouteCollection]: http://msdn.microsoft.com/en-us/library/system.web.routing.routecollection(v=vs.110).aspx
+[httphandler]: //msdn.microsoft.com/en-us/library/bb398986(v=vs.100).aspx#Background
+[mvcroutehandler]: //msdn.microsoft.com/en-us/library/system.web.mvc.mvcroutehandler(v=vs.118).aspx
+[routehandler]: //msdn.microsoft.com/en-us/library/cc668201.aspx
+[routecollection]: //msdn.microsoft.com/en-us/library/system.web.routing.routecollection(v=vs.110).aspx

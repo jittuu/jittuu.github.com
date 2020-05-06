@@ -5,24 +5,21 @@ title: Using Azure Explorer on Windows Server 2012
 
 # TL;DR
 
-1. add <http://installers.cerebrata.com> into the Trusted sites
+1. add <//installers.cerebrata.com> into the Trusted sites
 2. add <https://cerebratainstallers.blob.core.windows.net> into the Trusted sites
 3. go to [download][] and install
 
-
 # More
 
-I use [Azure Explorer][] from cerebrata to work with [azure storage][storage]. Today, I need to use it at my azure VM with Windows Server 2012. 
+I use [Azure Explorer][] from cerebrata to work with [azure storage][storage]. Today, I need to use it at my azure VM with Windows Server 2012.
 
 I opened IE and go to [download][] Azure Explorer - then I got this error.
 
 ![error 1](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/azure-explorer-1.png)
 
-
-As error suggest, I added <http://installers.cerebrata.com> into the Trusted sites. And I tried to download again. This time I got this error;
+As error suggest, I added <//installers.cerebrata.com> into the Trusted sites. And I tried to download again. This time I got this error;
 
 ![error 2](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/azure-explorer-2.png)
-
 
 I check Details.. and found these two interesting log:
 
@@ -37,12 +34,10 @@ This time I add <https://cerebratainstallers.blob.core.windows.net> into the Tru
 
 ![security warning](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/azure-explorer-3.png)
 
-
 When the installation finish, .... it works!
 
 ![working](https://raw.githubusercontent.com/jittuu/jittuu.github.com/master/images/azure-explorer-4.png)
 
-
-[Azure Explorer]: http://www.cerebrata.com/products/azure-explorer/introduction
-[storage]: http://azure.microsoft.com/en-us/services/storage/
-[download]: http://www.cerebrata.com/download/azure-explorer
+[azure explorer]: //www.cerebrata.com/products/azure-explorer/introduction
+[storage]: //azure.microsoft.com/en-us/services/storage/
+[download]: //www.cerebrata.com/download/azure-explorer

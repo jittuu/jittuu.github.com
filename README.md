@@ -1,1 +1,1 @@
-The is my blog, <http://jittuu.com>.
+The is my blog, <//jittuu.com>.

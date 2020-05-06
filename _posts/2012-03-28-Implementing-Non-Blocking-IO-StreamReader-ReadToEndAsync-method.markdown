@@ -11,12 +11,12 @@ First, lets see the usage of _ReadToEndAsync_ method.
 {% highlight csharp %}
 using (var fs = File.Open(fileName, FileMode.Open))
 using (var reader = new StreamReader(fs)) {
-    var task = reader
-                .ReadToEndAsync()
-                .ContinueWith(t => {
-                  var content = t.Result;
-                  // do your work with file content
-                });
+var task = reader
+.ReadToEndAsync()
+.ContinueWith(t => {
+var content = t.Result;
+// do your work with file content
+});
 
     //
     // do other things while reading the file (non-blocking IO)
@@ -24,6 +24,7 @@ using (var reader = new StreamReader(fs)) {
 
     // wait until the file reading is complete
     task.Wait();
+
 }
 {% endhighlight %}
 
@@ -32,8 +33,8 @@ OK. It is pretty easy to use, right? :)
 But the implementation is not that straight forward. Lets see the implementation
 {% highlight csharp %}
 public static class StreamReaderTaskParallelism {
-  public static Task<string> ReadToEndAsync(this StreamReader reader) {
-      var stream = reader.BaseStream;
+public static Task<string> ReadToEndAsync(this StreamReader reader) {
+var stream = reader.BaseStream;
 
       if (stream is MemoryStream) {
           return Task.Factory.StartNew<string>(() => reader.ReadToEnd());
@@ -65,10 +66,11 @@ public static class StreamReaderTaskParallelism {
       action();
 
       return ts.Task;
-  }
 
-  private static IEnumerable<Task<int>> EnumerateReadAsync(Stream stream, MemoryStream writer) {
-      var buffer = new byte[4 * 1024];
+}
+
+private static IEnumerable<Task<int>> EnumerateReadAsync(Stream stream, MemoryStream writer) {
+var buffer = new byte[4 * 1024];
 
       while (true) {
           var pendingRead = stream.ReadAsync(buffer, 0, buffer.Length);
@@ -79,7 +81,8 @@ public static class StreamReaderTaskParallelism {
 
           writer.Write(buffer, 0, bytesRead);
       }
-  }
+
+}
 }
 {% endhighlight %}
 
@@ -99,56 +102,57 @@ var writer = new MemoryStream();
 var enumerator = EnumerateReadAsync(stream, writer).GetEnumerator();
 Action action = null;
 action = delegate {
-    try {
-        if (enumerator.MoveNext()) {
-            enumerator.Current.ContinueWith(delegate { action(); });
-        }
-        else {
-            using (var r = new StreamReader(writer)) {
-                writer.Position = 0;
-                var result = r.ReadToEnd();
-                ts.TrySetResult(result);
-            }
-            enumerator.Dispose();
-        }
-    }
-    catch (Exception ex) {
-        ts.TrySetException(ex);
-    }
+try {
+if (enumerator.MoveNext()) {
+enumerator.Current.ContinueWith(delegate { action(); });
+}
+else {
+using (var r = new StreamReader(writer)) {
+writer.Position = 0;
+var result = r.ReadToEnd();
+ts.TrySetResult(result);
+}
+enumerator.Dispose();
+}
+}
+catch (Exception ex) {
+ts.TrySetException(ex);
+}
 };
 action();
 {% endhighlight %}
 
 The issue is we need to chain [ContinueWith][] method **recursively** until the end of file.
 
-To achieve that, we need to retrieve an enumerator from the enumerable and uses that enumerator in a delegate.  The delegate moves the enumerator to its next element, and if there is a next element, retrieves it and uses [ContinueWith][] to schedule the delegate (recursively, in a sense) for execution when that current Task completes.  When the enumerator reaches the end, TaskCompletionSource will set result and enumerator is disposed. If there is any [Exception][] throws, it will set it in the Task. With that delegate created, it simply executes the delegate to get the execution started.
+To achieve that, we need to retrieve an enumerator from the enumerable and uses that enumerator in a delegate. The delegate moves the enumerator to its next element, and if there is a next element, retrieves it and uses [ContinueWith][] to schedule the delegate (recursively, in a sense) for execution when that current Task completes. When the enumerator reaches the end, TaskCompletionSource will set result and enumerator is disposed. If there is any [Exception][] throws, it will set it in the Task. With that delegate created, it simply executes the delegate to get the execution started.
 
 Now, we need to create EnumerateReadAsync method which is state machine ([in-dept article][state_machine] from [jon skeet][]) by using [yield][].
 
 {% highlight csharp %}
 private static IEnumerable<Task<int>> EnumerateReadAsync(Stream stream, MemoryStream writer) {
-  var buffer = new byte[4 * 1024];
+var buffer = new byte[4 * 1024];
 
-  while (true) {
-      var pendingRead = stream.ReadAsync(buffer, 0, buffer.Length);
-      yield return pendingRead;
+while (true) {
+var pendingRead = stream.ReadAsync(buffer, 0, buffer.Length);
+yield return pendingRead;
 
       int bytesRead = pendingRead.Result;
       if (bytesRead <= 0) break;
 
       writer.Write(buffer, 0, bytesRead);
-  }
+
+}
 }
 {% endhighlight %}
 
 Task&lt;int&gt; is **yield** from the EnumerateReadAsync method. When Task&lt;int&gt; completes, its continuation will be executed, which will cause the enumerator to MoveNext, thus ending up back in the EnumerateReadAsync method _just after the yield location_. When there is nothing to read from the file, MoveNext will return false, which causes the Task completion.
 
-[read_async]:http://jittuu.com/2012/3/26/TPL-with-Extension-for-Tranditional-Net-Async-Programming/
-[read_to_end]:http://msdn.microsoft.com/en-us/library/system.io.streamreader.readtoend.aspx
-[MemoryStream]:http://msdn.microsoft.com/en-us/library/system.io.memorystream.aspx
-[TaskCompletionSource]:http://msdn.microsoft.com/en-us/library/dd449174.aspx
-[ContinueWith]:http://msdn.microsoft.com/en-us/library/system.threading.tasks.task.continuewith.aspx
-[Exception]:http://msdn.microsoft.com/en-us/library/system.exception.aspx
-[state_machine]:http://csharpindepth.com/articles/chapter6/iteratorblockimplementation.aspx
-[jon skeet]:http://stackoverflow.com/users/22656/jon-skeet
-[yield]:http://msdn.microsoft.com/en-us/library/9k7k7cf0.aspx
+[read_async]: //jittuu.com/2012/3/26/TPL-with-Extension-for-Tranditional-Net-Async-Programming/
+[read_to_end]: //msdn.microsoft.com/en-us/library/system.io.streamreader.readtoend.aspx
+[memorystream]: //msdn.microsoft.com/en-us/library/system.io.memorystream.aspx
+[taskcompletionsource]: //msdn.microsoft.com/en-us/library/dd449174.aspx
+[continuewith]: //msdn.microsoft.com/en-us/library/system.threading.tasks.task.continuewith.aspx
+[exception]: //msdn.microsoft.com/en-us/library/system.exception.aspx
+[state_machine]: //csharpindepth.com/articles/chapter6/iteratorblockimplementation.aspx
+[jon skeet]: //stackoverflow.com/users/22656/jon-skeet
+[yield]: //msdn.microsoft.com/en-us/library/9k7k7cf0.aspx

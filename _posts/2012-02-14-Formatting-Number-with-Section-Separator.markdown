@@ -3,13 +3,13 @@ layout: post
 title: "Formatting Number with Section Separator"
 ---
 
-![formatting](http://i.imgur.com/E13ud.png)
+![formatting](//i.imgur.com/E13ud.png)
 
 While I'm working with number for reporting, I need to format number with different formatting depending on whether its value is positive or negative.
 
 If its value is positive number, I want to show with two decimal point, e.g <code class="inline">1234.00</code>. If its value is negative number, I want to show number in bracket, e.g. <code class="inline">(1234.00)</code>.
 
-Surprisingly, at least for me, .Net Numeric Formatting already support the above case with [Section Separator][section_separator]. 
+Surprisingly, at least for me, .Net Numeric Formatting already support the above case with [Section Separator][section_separator].
 
 Here is the code:
 
@@ -32,6 +32,6 @@ Console.WriteLine(format, 0); // => The result is: zero
 
 .Net Numeric Formatting is pretty powerful, you can read more detail in [here][n_format_1] and [here][n_format_2].
 
-[section_separator]:http://msdn.microsoft.com/en-us/library/0c899ak8.aspx#SectionSeparator
-[n_format_1]:http://msdn.microsoft.com/en-us/library/dwhawy9k.aspx
-[n_format_2]:http://msdn.microsoft.com/en-us/library/0c899ak8.aspx
+[section_separator]: //msdn.microsoft.com/en-us/library/0c899ak8.aspx#SectionSeparator
+[n_format_1]: //msdn.microsoft.com/en-us/library/dwhawy9k.aspx
+[n_format_2]: //msdn.microsoft.com/en-us/library/0c899ak8.aspx

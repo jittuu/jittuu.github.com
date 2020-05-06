@@ -10,27 +10,33 @@ Time flies. Now, we need to say _bye bye_ to 2011.
 # 2011
 
 ## My <s>son</s>king arrives
+
 This is the only reason required to make 2011 was a great year for me. I started the journey of fatherhood at 01.11.2011. I'll try my best to become a <s>good</s>great father. **I love you, son**.
 
-![king](http://i.imgur.com/zsZYzl.jpg)
+![king](//i.imgur.com/zsZYzl.jpg)
 
 ## Work
+
 While working at [memolife][], we managed to release Memo Genius v2.0. I have learned a lot in this company, especially about the _startup_ world.
 
 ## My product
+
 I was **failed** to create one product _live_. It was my _mistake_ that not focusing on only **one thing**. And now I realize that launching a product is not just about developing application, it also includes but not limited to creating sale site, feature tour page, marketing, SEO, support, etc.
 
 # 2012's Resolution
 
 ## Eat well, sleep well
+
 We, developers, used to sleep late, not eating at regular times. It is the time to change for me. I believe that eating well and sleeping well help me to stay _focus_ and _productive_ in 2012.
 
 ## Do exercise
+
 Healthy body and mind should be the first priority in our life which I forgot during last few years.
 
 ## Focus on one thing
+
 I should be doing _either_ relaxing my body or mind (of course, spending time with family is the best way to relax both) or working _effectively_. I shouldn't do both at the same time.
 
 Here is to a healthy, effective 2012. :)
 
-[memolife]:http://memolife.com
+[memolife]: //memolife.com

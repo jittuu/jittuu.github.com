@@ -3,7 +3,7 @@ layout: post
 title: "Comparing Cloud providers for new product development"
 ---
 
-Choosing the Cloud is more difficult now as vendors regularly drop prices and offer new features. I'm sure there is no clear winner and each will have each own strength and weakness. So, it is better to set the context before we compare. 
+Choosing the Cloud is more difficult now as vendors regularly drop prices and offer new features. I'm sure there is no clear winner and each will have each own strength and weakness. So, it is better to set the context before we compare.
 
 # Context
 
@@ -23,24 +23,24 @@ This is very typical architecture for public facing web application. Of course, 
 
 The following table describes the components and related cloud features.
 
-|            | AWS               | Azure                | Google Cloud Platform    |
-|------------|-------------------|----------------------|--------------------------|
-| Web API    | Elastic Beanstalk | Azure WebSites       | AppEngine                |
-| Database   | Amazon RDS        | Azure SQL            | Datastore/Cloud SQL      |
-| Storage    | Amazon S3         | Azure Storage        | Cloud Storage            |
-| Jobs       | Amazon Lambda     | Azure Functions      | AppEngine/Cloud Functions|
-| CI         | third-party       | VsTeam Services      | third-party              |
+|          | AWS               | Azure           | Google Cloud Platform     |
+| -------- | ----------------- | --------------- | ------------------------- |
+| Web API  | Elastic Beanstalk | Azure WebSites  | AppEngine                 |
+| Database | Amazon RDS        | Azure SQL       | Datastore/Cloud SQL       |
+| Storage  | Amazon S3         | Azure Storage   | Cloud Storage             |
+| Jobs     | Amazon Lambda     | Azure Functions | AppEngine/Cloud Functions |
+| CI       | third-party       | VsTeam Services | third-party               |
 
 ## Web API
 
-|            | Elastic Beanstalk | Azure WebSites       | AppEngine                |
-|------------|-------------------|----------------------|--------------------------|
-| Managed    | 3                 |  4                   | **5**                    |
-| Price*     | $70.08            | $204                 | **$25.55**               |
+|         | Elastic Beanstalk | Azure WebSites | AppEngine   |
+| ------- | ----------------- | -------------- | ----------- |
+| Managed | 3                 | 4              | **5**       |
+| Price\* | \$70.08           | \$204          | **\$25.55** |
 
 Managed services mean server is maintained by provider. The higher number, the better. I gave Azure WebSites to 4 because it doesn't have other features compare to AppEngine such as version splitting, no downtime deployment, no free centralize cache (memcache/redis), etc.
 
-*_price is estimated for two environments_
+\*_price is estimated for two environments_
 
 - AWS: 1 year no-upfront (1x t2.small, 1x t2.medium)
 - Azure: (1x B1, 1x S2)
@@ -48,9 +48,9 @@ Managed services mean server is maintained by provider. The higher number, the b
 
 ## Database
 
-| Database   | Amazon RDS        | Azure SQL            | Datastore/Cloud SQL      |
-|------------|-------------------|----------------------|--------------------------|
-| Price      | $77.38            | $79.98               | **$59.65**               |
+| Database | Amazon RDS | Azure SQL | Datastore/Cloud SQL |
+| -------- | ---------- | --------- | ------------------- |
+| Price    | \$77.38    | \$79.98   | **\$59.65**         |
 
 - AWS: (1x db.t2.micro, 1x db.m3.medium)
 - Azure: (1x B, 1x S2) _it is very difficult to convert DTU to server. So, I just guess it from [this review](https://cbailiss.wordpress.com/2015/01/31/azure-sql-database-v12-ga-performance-inc-cpu-benchmaring/)._
@@ -60,14 +60,14 @@ Managed services mean server is maintained by provider. The higher number, the b
 
 The base line is
 
-- 10 GB storage 
+- 10 GB storage
 - PUT/LIST ops 1million
 - GET object ops 10million
 - 1TB Egress bandwidth (South-east-asia)
 
-| Storage    | Amazon S3         | Azure Storage        | Cloud Storage            |
-|------------|-------------------|----------------------|--------------------------|
-| Price      | $130.21           | $141.93              | **$122.88**              |
+| Storage | Amazon S3 | Azure Storage | Cloud Storage |
+| ------- | --------- | ------------- | ------------- |
+| Price   | \$130.21  | \$141.93      | **\$122.88**  |
 
 ## Jobs
 
@@ -77,7 +77,7 @@ For our usecase, there won't be many jobs running and we could re-use resource f
 
 We could use [CircleCI](https://circleci.com) (1 concurrent build is free) for AWS and Google while we use Visual Studio Team Services for Azure. So, I'll also skip it.
 
-# Process 
+# Process
 
 I will try to break down into a few software development processes so that we can compare each process for different cloud providers.
 
@@ -87,11 +87,11 @@ Yes. This is SDLC for our team. We are targeting to release multiple times per d
 
 The following table contains some components which hasn't covered by the basic architecture components.
 
-|            | AWS               | Azure                | Google Cloud Platform    |
-|------------|-------------------|----------------------|--------------------------|
-| Coding     | Go                | dotnet               | Go                       |
-| Deployment | CodeDeploy        | **VsTeam Service**   | Deployment Manager       |
-| Monitoring | third-party       | Application Insights | **StackDrivers**         |
+|            | AWS         | Azure                | Google Cloud Platform |
+| ---------- | ----------- | -------------------- | --------------------- |
+| Coding     | Go          | dotnet               | Go                    |
+| Deployment | CodeDeploy  | **VsTeam Service**   | Deployment Manager    |
+| Monitoring | third-party | Application Insights | **StackDrivers**      |
 
 ## Coding
 
@@ -110,7 +110,7 @@ There are only two contenders, Azure and Google Cloud Platform. I didn't have go
 - No API (to read data) yet.
 - Very difficult to check trace log compare to [StackDriver Logging](https://cloud.google.com/logging/)
 - No Detailed Tracing (Performance Monitoring) compare to [StackDriver Tracing](https://cloud.google.com/trace/)
-- No centralize Error Reporting compare to [StackDriver Error Reporting](https://cloud.google.com/error-reporting/) 
+- No centralize Error Reporting compare to [StackDriver Error Reporting](https://cloud.google.com/error-reporting/)
 
 # Container
 
@@ -118,11 +118,11 @@ How about Container?
 
 Container has been very porpular in recent years and many company bet on that as future software packing. Even Microsoft partner with Docker to bring Docker to Windows (Nano Server). It won't be too long for Microsoft own Container Service will land to Azure. Anyway, for now - there is only two horses (AWS and GCP) in this race.
 
-I personally haven't tried but both of them are just sit on top of VMs. If comparing VMs, **Google Cloud Platform** has some edge on that and [their container engine](https://cloud.google.com/container-engine/) is [K8](http://kubernetes.io/) is opensource - that will bring portability if you need to host in on-premise servers.
+I personally haven't tried but both of them are just sit on top of VMs. If comparing VMs, **Google Cloud Platform** has some edge on that and [their container engine](https://cloud.google.com/container-engine/) is [K8](//kubernetes.io/) is opensource - that will bring portability if you need to host in on-premise servers.
 
 # BizSpark
 
-You may notice that Azure is a bit more expensive than others but they have nice _BizSpark_ program. With that, you will get $150/month credit for **3 years**.
+You may notice that Azure is a bit more expensive than others but they have nice _BizSpark_ program. With that, you will get \$150/month credit for **3 years**.
 
 That will help you to run without spending money for **3 years** but after that you **still need to pay**.
 

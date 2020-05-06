@@ -21,5 +21,5 @@ When I realized that, I think it was 3-4 years ago - I try to change my habit. I
 
 > Don't forget that we are paid to create **working quality software** - not to sit in front of PC and type.
 
-[zone]: http://lifehacker.com/5920484/what-is-the-zone-anyway
-[pomodoro]: http://en.wikipedia.org/wiki/Pomodoro_Technique
+[zone]: //lifehacker.com/5920484/what-is-the-zone-anyway
+[pomodoro]: //en.wikipedia.org/wiki/Pomodoro_Technique

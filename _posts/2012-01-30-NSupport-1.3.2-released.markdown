@@ -5,11 +5,11 @@ title: "NSupport 1.3.2 is released"
 
 [NSupport][] version **1.3.2** is released. Please check the [ChangeLog][] for more detail about changes.
 
-![nsupport](http://i.imgur.com/wEB6T.png)
+![nsupport](//i.imgur.com/wEB6T.png)
 
-Oh! Yeah.. *NSupport* got his own [icon][] which is created by [Thein Myint Win][twm]. Thanks a lot, bro. :)
+Oh! Yeah.. _NSupport_ got his own [icon][] which is created by [Thein Myint Win][twm]. Thanks a lot, bro. :)
 
-[NSupport]:http://www.nuget.org/packages/NSupport
-[ChangeLog]:https://github.com/jittuu/NSupport/blob/master/ChangeLog.md
-[icon]:http://i.imgur.com/I31KT.png
-[twm]:http://www.facebook.com/win.tmwin
+[nsupport]: //www.nuget.org/packages/NSupport
+[changelog]: https://github.com/jittuu/NSupport/blob/master/ChangeLog.md
+[icon]: //i.imgur.com/I31KT.png
+[twm]: //www.facebook.com/win.tmwin

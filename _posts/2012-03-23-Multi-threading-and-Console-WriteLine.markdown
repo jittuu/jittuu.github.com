@@ -16,8 +16,8 @@ Lets do some performance benchmarking test with this code
 
 {% highlight csharp %}
 class Program {
-    static void Main(string[] args) {
-        var stopwatch = new Stopwatch();
+static void Main(string[] args) {
+var stopwatch = new Stopwatch();
 
         Console.WriteLine("");
         stopwatch.Start();
@@ -38,13 +38,14 @@ class Program {
         Console.WriteLine("With Console.WriteLine: {0:c}", stopwatch.Elapsed);
         // Console.WriteLine("Without Console.WriteLine: {0:c}", stopwatch.Elapsed);
     }
+
 }
 {% endhighlight %}
 
 Here is the result I have got in **My Machine**.
 
-![with Console.WriteLine](http://i.imgur.com/m8aM1.png)
-![without Console.WriteLine](http://i.imgur.com/edYA4.png)
+![with Console.WriteLine](//i.imgur.com/m8aM1.png)
+![without Console.WriteLine](//i.imgur.com/edYA4.png)
 
 Even for this small test, there is 500ms different.
 
@@ -52,4 +53,4 @@ IMO, I prefer to use some Asynchronous logging rather than <code class="inline">
 
 _Note:_ I'm _not saying_ that you should never use Console.WriteLine in multi-threading executing. I'm trying to say that you should **aware that it is I/O blocking operations.**
 
-[Console]:http://msdn.microsoft.com/en-us/library/system.console.aspx
+[console]: //msdn.microsoft.com/en-us/library/system.console.aspx

@@ -7,18 +7,18 @@ Recently, I'm doing [web scraping][scraping] using the _awesome_ library [HtmlAg
 
 Here is the steps to do so:
 
-1. Open [Developer Tools][devTools]
+1. Open [Developer Tools][devtools]
 2. Select [Console][console] tab.
 3. Use <code class="inline">$x</code> token. For example, <code class="inline">$x("/html/body")</code> will select the <code class="inline">body</code> tag.
 
 A picture worth a thousand words. :)
 
-![xpath in chrome](http://i.imgur.com/dSrrv.png)
+![xpath in chrome](//i.imgur.com/dSrrv.png)
 
-[scraping]:http://en.wikipedia.org/wiki/Web_scraping
-[HtmlAgilityPack]:http://htmlagilitypack.codeplex.com
-[XPath]:http://en.wikipedia.org/wiki/XPath
-[DOM]:http://en.wikipedia.org/wiki/Document_Object_Model
-[chrome]:http://www.google.com.sg/chrome/
-[devTools]:http://code.google.com/chrome/devtools/docs/overview.html
-[console]:http://code.google.com/chrome/devtools/docs/console.html
+[scraping]: //en.wikipedia.org/wiki/Web_scraping
+[htmlagilitypack]: //htmlagilitypack.codeplex.com
+[xpath]: //en.wikipedia.org/wiki/XPath
+[dom]: //en.wikipedia.org/wiki/Document_Object_Model
+[chrome]: //www.google.com.sg/chrome/
+[devtools]: //code.google.com/chrome/devtools/docs/overview.html
+[console]: //code.google.com/chrome/devtools/docs/console.html

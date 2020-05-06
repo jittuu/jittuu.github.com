@@ -15,13 +15,13 @@ Lets say, we are building multi-tenant E-commerce web-base application. At very 
 
 Lets see what are the requirements for our multi-tenant application.
 
- - **Isolation** - each tenant should isolated from each other, including data and system uptime.
- - **Sacability** - our hosting should allow to scale _horizontally_ because we can't just host all the tenants in one server.
- - **Extensibility** - each tenant should allow to customize _some_ behavior of the core system.
- - **Release Management** - we should able to release updates/hot-fixes to each tenant without affecting other tenants. But if we do updates/hot-fixes to the **Core** system, we should be able to release all the tenants as well.
- - **Single source code** - there should be only one source code for the **Core** system. It requires to mention specifically because I want to highlight that we are not building _copy-paste-customize_ system. (sound familiar?)
- - **Simplicity** - Actually, it applies to all the systems. When building customizable system, the simplicity is much more important because people tend to build the system which allows to customize _dynamically_. Dynamic will lead to a lot of complexity.
+- **Isolation** - each tenant should isolated from each other, including data and system uptime.
+- **Sacability** - our hosting should allow to scale _horizontally_ because we can't just host all the tenants in one server.
+- **Extensibility** - each tenant should allow to customize _some_ behavior of the core system.
+- **Release Management** - we should able to release updates/hot-fixes to each tenant without affecting other tenants. But if we do updates/hot-fixes to the **Core** system, we should be able to release all the tenants as well.
+- **Single source code** - there should be only one source code for the **Core** system. It requires to mention specifically because I want to highlight that we are not building _copy-paste-customize_ system. (sound familiar?)
+- **Simplicity** - Actually, it applies to all the systems. When building customizable system, the simplicity is much more important because people tend to build the system which allows to customize _dynamically_. Dynamic will lead to a lot of complexity.
 
- In the next few posts, I'll talk about how are we going to build multi-tenant application.
+In the next few posts, I'll talk about how are we going to build multi-tenant application.
 
- [Multitenancy]: http://en.wikipedia.org/wiki/Multitenancy
+[multitenancy]: //en.wikipedia.org/wiki/Multitenancy

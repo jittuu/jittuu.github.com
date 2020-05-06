@@ -17,7 +17,6 @@ So, how should we move from red to green? Simple. We need to get _more_ things d
 - **Pomodoro**. If you don't know, go and [read about it][pomodoro]. And _use_ it. I usually target to achieve 4-6 pomodori. Yes. There is _max limit_ for me.
 - **Chrome tabs**. Many chrome tabs usually means we are wasting memory and overloaded with too many information. Close what you don't need.
 
-
-[talk]:http://www.youtube.com/watch?v=FS1mnISoG7U
-[scott]:http://www.hanselman.com/
-[pomodoro]:http://pomodorotechnique.com/
+[talk]: //www.youtube.com/watch?v=FS1mnISoG7U
+[scott]: //www.hanselman.com/
+[pomodoro]: //pomodorotechnique.com/

@@ -11,7 +11,7 @@ Writing another service as monitoring service? ( _I know you are thinking it now
 
 If you want _just right_ version for monitoring, you can use **built-in** feature from Windows. Look into the **Recovery** tab of the service _properties_, as available via **services.msc**.
 
-![service properties](http://i.imgur.com/JhfGG.png)
+![service properties](//i.imgur.com/JhfGG.png)
 
 You can choose one of the followings when service fails:
 
